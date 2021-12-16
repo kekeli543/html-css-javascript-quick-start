@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件傳遞機制 Event Propagation</title>
+</head>
+<body>
+    <h3>事件傳遞範例</h3>
+    <div id="layout">
+        <button id="btn">點擊</button>
+    </div>
+    <script>
+        let layout=document.querySelector("#layout");
+        let btn=document.querySelector("#btn");
+        /*
+        標籤元件.addEventListener("事件名稱", 處理函式, 捕獲模式(true)或冒泡模式(false))
+        預設是冒泡模式
+        */        
+        //Event Handling in Capture Stage(由外而內)
+        document.body.addEventListener("click",function(){
+            console.log("Body Clicked, 捕獲模式");
+        },true);
+        layout.addEventListener("click",function(e){
+            console.log("Layout Clicked, 捕獲模式");
+            //e.stopPropagation();//停止事件傳遞
+        },true);
+        btn.addEventListener("click",function(){
+            console.log("Button Clicked, 捕獲模式");
+        },true);
+        //Event Handling in Bubble Stage(由內而外)
+        document.body.addEventListener("click",function(){
+            console.log("Body Clicked, 冒泡模式");
+        });
+        layout.addEventListener("click",function(){
+            console.log("Layout Clicked, 冒泡模式");
+        });
+        btn.addEventListener("click",function(){
+            console.log("Button Clicked, 冒泡模式");
+        });
+    </script>
+</body>
+</html>
