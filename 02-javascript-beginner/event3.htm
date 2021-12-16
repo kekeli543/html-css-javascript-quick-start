@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS事件處理- event3.htm</title>
+    <script type="text/javascript">
+        function init(){
+            var btn=document.getElementById("btn");
+            var handler=function(e){
+                //alert("Hello");
+                alert(e.clientX+","+e.clientY);
+            }
+            btn.addEventListener("click",handler);
+            /*點擊按鈕後的過程描述
+            1.使用者點擊按鈕解發 click 事件
+            2.瀏覽器主動收集和事件有關的資訊，並生成 Event Object
+              var eventObj=事件物件;
+            3.呼叫已經註冊的事件處理器(事件處理函式)
+              handler(evnetObj);
+            */
+           
+            //document.addEventListener("事件的名稱",匿名函式);
+           document.addEventListener("keydown",function(e){
+                alert(e.keyCode);//印出按了那些code
+           });
+        }
+        
+    </script>
+</head>
+<body onload="init();">
+    <h3>Javascript 事件處理 - Event Object 事件物件</h3>
+    <button id="btn">Click</button>
+</body>
+</html>
