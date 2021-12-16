@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS事件處理- event2.htm</title>
+    <script type="text/javascript">  
+        //用 JS 的程式，動態的註冊事件處理器    
+        function init(){
+            var btn=document.getElementById("btn");
+            /*古早之前的寫法
+            btn.onclick=function(){
+                alert("已點擊");
+            }*/
+
+            //準備一個事件處理器，用來對應事件的函式
+            var handler=function(){
+                alert("已點擊");
+            }
+            //btn.addEventListener("事件的名稱",事件處理器);
+            btn.addEventListener("click",handler);
+        }
+    </script>
+</head>
+<body onload="init();">
+    <h4>網頁一載入後就執行註冊事件處理器</h4>
+    <button id="btn">Click</button>
+
+    <h4>靜態的事件處理</h4>
+    <span onclick="alert('test')">Test</span>
+</body>
+</html>
