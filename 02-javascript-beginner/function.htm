@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS函式- 基礎使用</title>
+    <script type="text/javascript">
+        //內建函式  
+        alert("Hello World");
+
+        //自行設計函式的流程        
+        //設計階段
+        function test(){
+            //函式的本體
+            alert("Hello Test");
+        }
+        //呼叫及使用階段
+        test();
+        test();
+
+        function test2(msg){
+            alert(msg);
+        }
+        test2("Hello Hello");
+        test2("Hello 123");
+
+        function add(n1,n2){
+            alert(n1+n2);
+        }
+        add(3,4);
+
+        function add2(n1,n2){
+            alert(n1+n2);
+            return n1+n2;
+        } 
+        var result=add2(3,4)*add2(10,20);
+        alert(result);
+
+        //設計一個傳參數的加總器
+        function getSum(max){
+            var sum=0;
+            var n=1;
+            while(n<=max){
+                sum+=n;
+                n++;
+            }
+            alert(sum);
+        }
+        getSum(50);//印出1275
+        getSum(100);//印出5050
+  
+        //設計一個傳參數且有回傳值的加總器
+        function getSum2(max){
+            var sum=0;
+            var n=1;
+            while(n<=max){
+                sum+=n;
+                n++;
+            }
+            return sum;
+        }
+        var result=getSum2(50)*getSum2(100);
+        alert(result);
+        
+    </script>
+</head>
+<body>
+    <h3>Javascript 函式 - 基礎使用</h3>
+</body>
+</html>
