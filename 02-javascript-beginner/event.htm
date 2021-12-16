@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS事件處理- event.htm</title>
+    <script type="text/javascript">
+        function over(element){
+            element.style.color="red";
+        }
+        function out(element){
+            element.style.color="black";
+        }
+    </script>
+</head>
+<body>
+    <h3>Javascript 事件處理 - 基本教學</h3>
+    <button onclick="alert('已點擊');">Click</button>
+    <span onmouseover="this.style.color='red';"
+        onmouseout="this.style.color='black';">Test</span>
+    
+    <br>        
+    <br>
+    <br>
+
+    <span onmouseover="over(this);"
+        onmouseout="out(this);">Test2</span>   
+    <div onmouseover="over(this);"
+        onmouseout="out(this);">Line Line</div>           
+</body>
+</html>
