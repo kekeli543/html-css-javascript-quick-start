@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM - 選單開合範例</title>
+    <script type="text/javascript">
+        function toggleSMenu(){
+            var menu=document.getElementById("menu");
+            /*
+            if(menu.style.display=="none"){
+                menu.style.display="block";
+            }else{
+                menu.style.display="none";
+            }*/
+            //使用類別選擇器來進行切換  
+            menu.classList.toggle("hide");
+        }
+        function toggleMenu(num){
+            var menu=document.getElementById("menu-"+num);
+            //使用類別選擇器來進行切換  
+            menu.classList.toggle("hide");
+        }
+    </script>
+    <style type="text/css">        
+        .hide{display: none;}
+    </style>
+</head>
+<body>
+    <h3>單一個選單</h3>
+    <div onclick="toggleSMenu();">選單 [標題一]</div>
+    <ul id="menu">
+        <li>項目 1-1</li>
+        <li>項目 1-2</li>
+        <li>項目 1-3</li>
+    </ul>
+
+    <hr>
+    <h3>點擊不同選單進行開合</h3>
+    <div onclick="toggleMenu(1);">選單 [標題一]</div>
+    <ul id="menu-1">
+        <li>項目 1-1</li>
+        <li>項目 1-2</li>
+        <li>項目 1-3</li>
+    </ul>
+    <div onclick="toggleMenu(2);">選單 [標題二]</div>
+    <ul id="menu-2">
+        <li>項目 2-1</li>
+        <li>項目 2-2</li>
+        <li>項目 2-3</li>
+    </ul>
+    <div onclick="toggleMenu(3);">選單 [標題三]</div>
+    <ul id="menu-3">
+        <li>項目 3-1</li>
+        <li>項目 3-2</li>    
+    </ul>
+
+</body>
+</html>
