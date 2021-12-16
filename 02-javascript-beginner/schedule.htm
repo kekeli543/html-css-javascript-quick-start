@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 自動排程</title>
+    <script type="text/javascript">
+        var timer;
+        function init(){
+            //一秒後跳出Hello視窗
+            //window.setTimeout(test,1000);
+            timer=document.getElementById("tmr");
+            window.setTimeout(countdown,1000);
+        }
+        function test(){
+            alert("Hello");
+        }
+        function countdown(){
+            //timer.innerHTML=timer.innerHTML-1;
+            //window.setTimeout(countdown,1000);
+            timer.innerHTML=timer.innerHTML-1;
+            if(timer.innerHTML>0){
+                window.setTimeout(countdown,1000);
+            }else{//倒數到0時，轉址到Google
+                document.location="https://www.google.com.tw/?hl=zh_TW";
+            }
+        }
+    </script>
+</head>
+<body onload="init();">
+    <h3>JavaScript 自動排程</h3>
+    <div>倒數計數 <span id="tmr">3</span></div>
+</body>
+</html>
