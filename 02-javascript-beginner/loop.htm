@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS流程控制- 判斷式</title>
+    <script type="text/javascript">
+        //判斷式       
+        if(true){
+            alert("Hello World");
+        }
+        if(4<3){
+            alert("Hello World.");
+        }
+        var money=prompt("請輸入提款金額:", " ");
+        if(money>30000){
+            alert("已超出每日提領上限!");
+        }
+
+        var money=prompt("請輸入提款金額:", " ");
+        if(money>30000){
+            alert("已超出每日提領上限!");
+        }
+        else{
+            alert("吐鈔金額: "+money);
+        }
+
+        var n=prompt("請輸入數字", "");
+        if(n>500){
+            alert(n+">500");
+        }else if(n>300){
+            alert(n+">300");
+        }else{
+            alert(n+"<=300");
+        }
+
+        //範例: 四則運算 
+        var n1=prompt("請輸入一個數字","");
+        var n2=prompt("請輸入一個數字","");
+        //注意要記得做資料形態的轉換: 把字串轉成數字
+        n1=Number(n1);
+        n2=Number(n2);
+        var op=prompt("請輸入運算符號:+, -, *, /","");
+        var result;
+        if(op=="+"){
+            result=n1+n2;
+        }else if(op=="-"){
+            result=n1-n2;
+        }else if(op=="*"){
+            result=n1*n2;
+        }else if(op=="/"){
+            result=n1/n2;
+        }else{
+            result="不合法的運算符號";
+        }
+        alert(result);
+
+    </script>
+</head>
+<body>
+    <h3>JS 流程控制- 判斷式</h3>
+</body>
+</html>
