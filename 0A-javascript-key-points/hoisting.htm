@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting 宣告提升</title>
+    <script>
+        //一般程式變數的宣告及使用
+        var x;//宣告變數
+        x=10;//給定初始值
+        alert(x);//使用變數
+
+        //JavaScript (針對變數)中特殊的 Hoisting 宣告提升處理
+        x=20;
+        alert(x);
+        var x;
+        //注意下列狀況: JS只會做宣告提升
+        alert(y);//使用變數
+        var y=100;//宣告變數,同時給定初始值
+        //var y;
+        //alert(y);
+        //y=100;
+
+        //一般程式函式的宣告及呼叫
+        function test(){
+            alert("Hello");
+        };
+        test();
+
+        //JavaScript (針對函式)中特殊的 Hoisting 宣告提升處理
+         test2();
+        function test2(){
+            alert("test2");
+        };
+        //注意下列狀況: 把函式當做資料指定給變數，則只有變數宣告被提升
+        test3();
+        var test3=function(){
+            alert("test3");
+        };
+        //var test3;
+        //test3();
+        //test3=function(){
+        //    alert("test3");
+        //};
+    </script>
+</head>
+<body>
+    <h3>Hoisting 宣告提升</h3>
+</body>
+</html>
