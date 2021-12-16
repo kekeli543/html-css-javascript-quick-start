@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS流程控制- 迴圈</title>
+    <script type="text/javascript">
+        //迴圈
+        //while loop          
+        while(true){
+            alert("無窮迴圈");
+        }
+      
+        var n=0;
+        while(n<=50){
+            n++;
+        }
+        alert(n);//印出51
+        //印出1+2+3+...+100=?
+        var sum=0;
+        var i=1;
+        while(i<=100){
+            sum+=i;//sum=sum+i;
+            i++;//i=i+1;
+        }
+        alert(sum);//印出5050
+       
+        //印出1+2+...+50=?
+        var sum=0;
+        var n=1;
+        while(n<=50){
+            sum+=n;
+            n++;
+        }
+        alert(sum);//印出1275
+       
+        //for loop
+        //for(初始區塊;判斷;迴圈區塊)
+        //印出1+2+3+...+100=?
+        var sum=0;
+        for(var i=1;i<=100;i++){
+            sum+=i;            
+        }
+        alert(sum);//印出5050
+  
+        //break; 強制跳出迴圈
+        var n=0;
+        while(n<=100){
+            if(n==50){
+                break;
+            }
+            n++;
+        }
+        alert(n);
+
+        //continue; 強制進行下一次迴圈
+        var x=0;
+        for(var n=0;n<=100;n++){
+            if(n%4==0){
+                continue;
+            }
+            x++;     
+        }
+        alert(x);
+
+        var x=0;
+        for(var i=0;i<=100;i++){
+            if(i%2==0){
+                continue;
+            }
+            x++;
+        }
+        alert(x);
+    </script>
+</head>
+<body>
+    <h3>Javascript 流程控制- 迴圈</h3>
+</body>
+</html>
